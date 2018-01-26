@@ -33,7 +33,7 @@ pipeline {
        label 'apache'
      }
      steps {
-       sh "if ![ -d /var/www/html/rectangle/all/${env.BRANCH_NAME}' ]; mkdir /var/www/html/rectangle/all/${env.BRANCH_NAME}; fi"
+       sh "if ![ -d '/var/www/html/rectangle/all/${env.BRANCH_NAME}' ]; mkdir /var/www/html/rectangle/all/${env.BRANCH_NAME}; fi"
        sh "cp dist/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar /var/www/html/rectangle/all/${env.BRANCH_NAME}/"
      }
    }
@@ -63,7 +63,7 @@ pipeline {
        branch 'master'
      }
      steps {
-       sh "cp /var/www/html/rectangle/all/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar //var/www/html/rectangle/green/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar "
+       sh "cp /var/www/html/rectangle/all/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar //var/www/html/rectangle/green/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar"
      }
    }
    stage('promote development branch to master') {
