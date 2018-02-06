@@ -6,6 +6,13 @@ pipeline {
   }
 
   stages {
+    stage('Say Hello'){
+      agent any
+
+      steps {
+        sayHello 'Awesome student'
+      }
+    }
     stage('Unit Tests') {
       agent {
         label 'apache'
@@ -98,8 +105,8 @@ pipeline {
          to: "priyalp62@gmail.com"
          )
      }
+   }
   }
- }
 }
 post {
   failure {
